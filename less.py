@@ -1,7 +1,6 @@
 import sublime
 import sublime_plugin
 import subprocess
-from lessc_opts import lessc_opts
 
 
 class CompileLessOnSave(sublime_plugin.EventListener):
