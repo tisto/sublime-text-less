@@ -1,6 +1,7 @@
 # adapted from https://github.com/wbond/sublime_package_control/blob/master/Package%20Control.py
 import os.path
 import subprocess
+import sublime
 
 
 class BinaryNotFoundError(Exception):
@@ -10,6 +11,17 @@ class BinaryNotFoundError(Exception):
 def find_binary(name):
     dirs = ['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin',
         '/sbin', '/bin']
+
+    s = sublime.load_settings("sublime-text-less.sublime-settings")
+    lessc_path = s.get("lessc_path")
+    nodejs_path = s.get("nodejs_path")
+
+    if lessc_path:
+        dirs.append(lessc_path)
+
+    if nodejs_path:
+        dirs.append(nodejs_path)
+
     for dir in dirs:
         path = os.path.join(dir, name)
         if os.path.exists(path):

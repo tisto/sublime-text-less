@@ -8,7 +8,7 @@ class CompileLessOnSave(sublime_plugin.EventListener):
 
     def on_post_save(self, view):
         try:
-            less = commandline.find_binary('less')
+            lessc = commandline.find_binary('lessc')
         except commandline.BinaryNotFoundError:
             sublime.error_message("I couldn't find \"less\" binary on your system. Less is required on your system. Please install it and try again.")
             return
@@ -19,7 +19,7 @@ class CompileLessOnSave(sublime_plugin.EventListener):
         filename = view.file_name()
         output_filename = filename.replace('.less', '.css')
 
-        command = [less] + [filename]
+        command = [lessc] + [filename]
         output = commandline.execute(command)
 
         output_file = open(output_filename,"w")
