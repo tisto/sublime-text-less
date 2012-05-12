@@ -28,6 +28,7 @@ Linux
 Mac Os X
 
   $ cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages
+
   $ git clone git@github.com:speechkey/sublime-text-less.git
 
 Edit sublime-text-less.sublime-settings and add lessc and nodejs path, if it not already included in your default environment path.
