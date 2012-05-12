@@ -20,7 +20,7 @@ def find_binary(name):
         dirs.append(lessc_path)
 
     if nodejs_path:
-        dirs.append(nodejs_path)
+        os.environ["PATH"] += ''.join([':', nodejs_path])
 
     for dir in dirs:
         path = os.path.join(dir, name)
