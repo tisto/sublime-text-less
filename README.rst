@@ -4,28 +4,38 @@ LESS PLUGIN FOR SUBLIME TEXT
 This plugin compiles LESS (http://lesscss.org/) files into CSS files in Sublime
 Text 2 on save.
 
-This plugin is tested on Linux only.
-
-If you are using Mac OS X or Windows have a look at
-https://github.com/BBB/sublime-text-2-plugins.
-
+This plugin is tested on Mac Os X, but suppose to work on other systems.
 
 Prerequisits
 ------------
 
-Install lessc
+Install nodejs, required for runing lessc:
 
-  $ apt-get install lessc
+  http://www.hodejs.org
 
-or
+Install lessc binary:
 
-  $ apt-get install nodejs npm
-  $ npm install lessc
+  http://lesscss.org/
 
 
-Installation
+Package installation
 ------------
 
-  $ cd ~/.config/sublime-text-2/Packages/
-  $ git clone git@github.com:tisto/sublime-text-less.git
+Linux
 
+  $ cd ~/.config/sublime-text-2/Packages/
+
+Mac Os X
+
+  $ cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages
+  $ git clone git@github.com:speechkey/sublime-text-less.git
+
+Edit sublime-text-less.sublime-settings and add lessc and nodejs path, if it not already included in your default environment path.
+
+Linux
+
+  $ vim ~/.config/sublime-text-2/Packages/sublime-text-less.sublime-settings
+
+Mac Os X
+
+  $ vim ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/sublime-text-less.sublime-settings   
